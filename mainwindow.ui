@@ -1,0 +1,429 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MoneyTracker</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+    QMainWindow {
+     background-color: #1E1E1E;
+    }
+   </string>
+  </property>
+  <widget class="QWidget" name="centralWidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>15</number>
+    </property>
+    <property name="leftMargin">
+     <number>20</number>
+    </property>
+    <property name="topMargin">
+     <number>20</number>
+    </property>
+    <property name="rightMargin">
+     <number>20</number>
+    </property>
+    <property name="bottomMargin">
+     <number>20</number>
+    </property>
+    <item>
+     <layout class="QHBoxLayout" name="inputLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="descriptionLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          color: #E0E0E0;
+         </string>
+        </property>
+        <property name="text">
+         <string>Описание:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="descriptionEdit">
+        <property name="minimumSize">
+         <size>
+          <width>200</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QLineEdit {
+           background-color: #2A2A2A;
+           color: #E0E0E0;
+           border: 1px solid #404040;
+           border-radius: 8px;
+           padding: 5px;
+          }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="amountLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          color: #E0E0E0;
+         </string>
+        </property>
+        <property name="text">
+         <string>Сумма:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLineEdit" name="amountEdit">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QLineEdit {
+           background-color: #2A2A2A;
+           color: #E0E0E0;
+           border: 1px solid #404040;
+           border-radius: 8px;
+           padding: 5px;
+          }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="typeLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          color: #E0E0E0;
+         </string>
+        </property>
+        <property name="text">
+         <string>Тип:</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QComboBox" name="typeCombo">
+        <property name="minimumSize">
+         <size>
+          <width>127</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QComboBox {
+           background-color: #2A2A2A;
+           color: #E0E0E0;
+           border: 1px solid #404040;
+           border-radius: 8px;
+           padding: 5px 20px 5px 5px;
+           min-width: 100px;
+          }
+          QComboBox::drop-down {
+           width: 20px;
+           border: none;
+           background: transparent;
+          }
+          QComboBox::down-arrow {
+           image: none;
+          }
+          QComboBox QAbstractItemView {
+           background-color: #2A2A2A;
+           color: #E0E0E0;
+           border: 1px solid #404040;
+           border-radius: 8px;
+           padding: 5px;
+           selection-background-color: #404040;
+           selection-color: #E0E0E0;
+          }
+         </string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="addButton">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+           background-color: #3B82F6;
+           color: #FFFFFF;
+           border-radius: 8px;
+           padding: 5px;
+           border: none;
+          }
+         </string>
+        </property>
+        <property name="text">
+         <string>Добавить</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <widget class="QTableWidget" name="tableWidget">
+      <property name="font">
+       <font>
+        <family>Helvetica</family>
+        <pointsize>11</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">
+        QTableWidget {
+         background-color: #2A2A2A;
+         color: #E0E0E0;
+         border: 1px solid #404040;
+         border-radius: 8px;
+         gridline-color: #404040;
+        }
+        QTableWidget::item {
+         padding: 5px;
+        }
+        QTableWidget::item:alternate {
+         background-color: #333333;
+        }
+        QHeaderView::section {
+         background-color: #404040;
+         color: #E0E0E0;
+         padding: 5px;
+         border: none;
+        }
+        QHeaderView::section:vertical {
+         background-color: #404040;
+         color: #E0E0E0;
+         padding: 5px;
+         border: none;
+        }
+       </string>
+      </property>
+      <property name="columnCount">
+       <number>3</number>
+      </property>
+      <attribute name="horizontalHeaderCascadingSectionResizes">
+       <bool>false</bool>
+      </attribute>
+      <attribute name="horizontalHeaderDefaultSectionSize">
+       <number>200</number>
+      </attribute>
+      <column>
+       <property name="text">
+        <string>Описание</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Сумма</string>
+       </property>
+      </column>
+      <column>
+       <property name="text">
+        <string>Тип</string>
+       </property>
+      </column>
+     </widget>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="buttonLayout">
+      <property name="spacing">
+       <number>10</number>
+      </property>
+      <item>
+       <spacer name="horizontalSpacer">
+        <property name="orientation">
+         <enum>Qt::Orientation::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteButton">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+           background-color: #EF4444;
+           color: #FFFFFF;
+           border-radius: 8px;
+           padding: 5px;
+           border: none;
+          }
+         </string>
+        </property>
+        <property name="text">
+         <string>Удалить</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QPushButton" name="saveButton">
+        <property name="minimumSize">
+         <size>
+          <width>100</width>
+          <height>30</height>
+         </size>
+        </property>
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>11</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          QPushButton {
+           background-color: #10B981;
+           color: #FFFFFF;
+           border-radius: 8px;
+           padding: 5px;
+           border: none;
+          }
+         </string>
+        </property>
+        <property name="text">
+         <string>Сохранить</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="summaryLayout">
+      <property name="spacing">
+       <number>20</number>
+      </property>
+      <item>
+       <widget class="QLabel" name="incomeLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          color: #E0E0E0;
+         </string>
+        </property>
+        <property name="text">
+         <string>Доходы: 0.00</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="expenseLabel">
+        <property name="font">
+         <font>
+          <family>Helvetica</family>
+          <pointsize>12</pointsize>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">
+          color: #E0E0E0;
+         </string>
+        </property>
+        <property name="text">
+         <string>Расходы: 0.00</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menuBar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>37</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QToolBar" name="mainToolBar">
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+  </widget>
+  <widget class="QStatusBar" name="statusBar"/>
+ </widget>
+ <layoutdefault spacing="6" margin="11"/>
+ <resources/>
+ <connections/>
+</ui>
